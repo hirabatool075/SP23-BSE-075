@@ -1,0 +1,232 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+}
+
+.header-top {
+    text-align: center;
+    padding: 10px;
+    background-color: #444;
+    font-size: 14px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 15px 0;
+    background-color: #333;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.shop-now-btn {
+    padding: 15px 30px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.shop-now-btn:hover {
+    background-color: #e5533d;
+}
+
+/* Categories Section */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.category {
+    text-align: center;
+    width: 30%;
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.category h2 {
+    margin: 15px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.category a {
+    text-decoration: none;
+    color: #ff6347;
+    font-size: 18px;
+}
+
+.category a:hover {
+    color: #e5533d;
+}
+
+/* Build Your Own Section */
+.build-your-own {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.build-your-own h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.build-your-own p {
+    font-size: 18px;
+    color: #555;
+}
+
+.build-btn {
+    padding: 12px 25px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 30px; 
+}
+
+.build-btn:hover {
+    background-color: #e5533d;
+}
+
+
+/* New Section: Featured Sofas */
+.featured-sofas {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.featured-sofas h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.sofa-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.sofa-item {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.sofa-item img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sofa-item h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .shop-now-btn {
+        padding: 10px 20px;
+    }
+
+    .sofa-grid {
+        flex-direction: column;
+    }
+
+    .sofa-item {
+        margin-bottom: 20px;
+    }
+}
