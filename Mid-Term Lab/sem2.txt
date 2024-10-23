@@ -1,0 +1,9 @@
+OOP Project - Social Media Network in Java
+
+Description:
+This object-oriented programming (OOP) project involved designing a basic social media network using Java. The project included features like user profiles, friend requests, status updates, and messaging between users. The OOP principles of inheritance, polymorphism, and encapsulation were applied to design a clean, maintainable codebase for the network simulation.
+
+Discrete Structures Project - Using Discrete Laws to Identify Propositions
+
+Description:
+This project focused on applying discrete mathematics, specifically propositional logic, to solve complex logical problems. It involved writing algorithms to identify and validate logical propositions using laws such as De Morgan’s laws, distributive, associative, and commutative properties. The project helped in improving problem-solving skills, especially in simplifying complex logical expressions.

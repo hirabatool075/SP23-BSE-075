@@ -1,0 +1,9 @@
+Web Technologies Project - Sofa Studio Website Clone
+
+Description:
+This project involved creating a responsive and fully functional clone of a website for a fictional furniture company, Sofa Studio, using HTML, CSS, JavaScript, and Bootstrap. The project focused on replicating the UI/UX design of a real-world e-commerce platform, featuring product galleries, navigation menus, and contact forms. The website was made mobile-friendly and optimized for performance.
+
+Database Systems Project - Library Database Management System
+
+Description:
+In this project, a complete Library Database Management System was developed using SQL for the backend and a basic front-end interface for user interaction. The system allowed users to borrow, return, and search for books, as well as manage user accounts and transaction records. Advanced SQL queries and relational database management concepts were applied to ensure data integrity and efficient querying.

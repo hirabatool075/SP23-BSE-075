@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(233, 197, 233);
+}
+
+.text-primary {
+    color: #181114;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.text-pink {
+    color: #e481b2;
+}
+
+#name {
+    color: rgb(68, 38, 77);
+}
+.bg-purple {
+    background-color: #bbacc4;
+}
+
+/* Initial collapsed state */
+.collapsed {
+    width: 250px;
+    height: 200px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.full-screen-card {
+    width: 100%; /* Expands to full container width */
+    height: auto;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.full-screen-card .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.full-screen-card {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    border: 5px solid #d63384;
+}
+
+button {
+    background-color: #a36ec4;
+    border: none;
+}
+
+button:hover {
+    background-color: #d63384;
+}
+
+.table-borderless td {
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+.table-borderless td:first-child {
+    color: #d63384;
+    font-weight: bold;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6a1b9a;
+}
+
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.collapsed {
+    width: 250px;
+    height: 200px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.full-screen-card {
+    width: 100%; /* Expands to full container width */
+    height: auto;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bg-purple {
+    background-image: url('bg.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: repeat; 
+    padding: 5rem 0; 
+}
+
+
+/* Font styling for all card content */
+.full-screen-card, .full-screen-card .card-body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Button Styling */
+button {
+    background-color: #a36ec4;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button:hover {
+    background-color: #d63384;
+}
+
+/* Additional card styling for alignment */
+.full-screen-card .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -1,0 +1,9 @@
+Islamiat Project - Islamic Laws to Deal With Social Ethical Problems
+
+Description:
+This project examines the application of Islamic laws in addressing modern social and ethical issues. Topics covered include family law, business ethics, and how Sharia principles provide frameworks to resolve conflicts in everyday situations. The project emphasizes the role of justice, equity, and societal welfare in Islam.
+
+Programming Fundamentals Project - C++ Project using loops and conditions
+
+Description:
+In this project, a variety of C++ programs were developed using loops (for, while) and conditional statements (if-else, switch). The primary focus was on understanding control structures to solve problems like finding prime numbers, sorting arrays, and building small interactive command-line applications. This project strengthened the foundation in basic programming logic and algorithms.
