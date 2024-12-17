@@ -1,0 +1,9 @@
+DSA Project - Tower Of Hanoi in C++
+
+Description:
+The Tower of Hanoi project was implemented using recursion to solve the classic problem of moving disks between three rods. The project demonstrated understanding of recursive algorithms, including base cases and recursive steps, and optimized the solution to minimize the number of moves. The program also visualized the steps required to solve the problem for any given number of disks.
+
+Pakistan Studies Project - A Critical Analysis of Pakistan's History (1979 - 1989)
+
+Description:
+This project presented a detailed analysis of Pakistan’s socio-political history from 1979 to 1989, focusing on key events like the Soviet-Afghan War, Zia-ul-Haq’s regime, and the country’s economic and foreign policies. The project critically examined how these events shaped the nation's trajectory, with insights into political instability, economic challenges, and foreign relations during this period.
