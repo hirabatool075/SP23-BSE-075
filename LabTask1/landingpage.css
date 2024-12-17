@@ -1,0 +1,335 @@
+.top-bar {
+    padding: 0px 125px; 
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1030; 
+}
+
+.navbar-container {
+    margin-top: 70px; /* Adjust this value according to the height of the top bar */
+}
+
+.navbar {
+    background-color: whitesmoke;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    position: fixed; 
+    top: 20px; /* Position it below the top bar */
+    width: 100%; 
+    z-index: 1020; 
+}
+
+.navbar .nav-link {
+    font-size: 16px; 
+}
+
+.navbar .nav-link i {
+    color: #333; /* Color for the cart icon */
+}
+
+.chat-button {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding around the button */
+    border-radius: 50%; /* Circular shape */
+    text-align: center; /* Center text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    font-size: 24px; /* Icon size */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    z-index: 1050;
+}
+
+.chat-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+.carousel-item {
+    height: 80vh; /* Adjust height as needed */
+    position: relative; /* For positioning caption */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20%; /* Adjust this to move the text up or down */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bolder;
+
+}
+
+
+.shop-now-button {
+    padding: 10px 20px;
+    border: 2px solid white; /* Thick white border */
+    border-radius: 20px; /* Rounded edges */
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: medium;
+}
+
+.shop-now-button:hover {
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+}
+
+
+/* Thick Bar Styling */
+.thick-bar {
+    background-color: white;
+    padding: 40px 80px; /* Adjust padding as needed */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.column {
+    flex: 1;
+    padding: 0 15px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1); /* Vague grey line */
+}
+
+.column:last-child {
+    border-right: none; /* Remove right border for the last column */
+}
+
+.column-img {
+    width: 100%; /* Ensure consistent image size */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.caption-link {
+    text-decoration: none;
+    color: rgb(66, 63, 63);
+}
+
+.caption-link:hover {
+    text-decoration: underline;
+}
+
+.learn-more {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Centered Text Styling */
+.centered-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.centered-text {
+    font-size: 2rem; /* Large font size */
+    margin: 0 20px; /* Space between text and lines */
+    font-weight: bold;
+    text-align: center;
+    color: rgb(109, 103, 103);
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background-color: lightgrey;
+    margin-top: 10px; /* Align the line to the center of the text */
+}
+
+/* Styling for the product categories section */
+/* Styling for the product categories section */
+.product-categories {
+    display: flex;
+    justify-content: space-evenly; /* Distribute categories evenly */
+    align-items: center;
+    margin: 50px auto; /* Center the section with some margin */
+    gap: 20px; /* Adjust spacing between categories */
+    max-width: 1200px; /* Restrict the total width */
+}
+
+/* Each product category container */
+.category {
+    border: 2px solid black; 
+    padding: 20px;
+    text-align: center;
+    width: 300px; /* Keep all categories the same size */
+    box-sizing: border-box;
+}
+
+/* Images within categories */
+.category img {
+    width: 80%; /* Adjust width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Headings for product names */
+.category h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Shop Now button styling */
+.shop-now-button2 {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 20px; 
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+/* Hover effect for buttons */
+.shop-now-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.trusted-loved {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.trusted-heading,
+.trusted-footer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    position: relative;
+}
+
+.trusted-heading::before,
+.trusted-heading::after,
+.trusted-footer::before,
+.trusted-footer::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 50px;
+    background-color: lightgray;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.trusted-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.trusted-item {
+    width: 30%;
+    text-align: center;
+}
+
+.trusted-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.trusted-item p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/*-----------build you own-------------*/
+
+/*.container {
+    margin-top: 5rem;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .list-group {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .list-group-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  
+  .call-to-action {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .text-white {
+    color: white;
+  }
+*/
+
+  /*-----------------book virtual appointment-----------------------*/
+  .image-container {
+    position: relative;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: Maximum width for the container */
+    margin: 0 auto; /* Center the container with margin on sides */
+}
+
+.centered-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.appointment-button {
+    position: absolute;
+    bottom: 20px; /* Adjust vertical position */
+    left: 20px; /* Adjust horizontal position */
+    padding: 10px 20px;
+    border: 2px solid black; /* Black border */
+    border-radius: 20px; /* Rounded edges */
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.appointment-button:hover {
+    background-color: black; /* Black background on hover */
+    color: white; /* White text on hover */
+}
+
+
+
+
