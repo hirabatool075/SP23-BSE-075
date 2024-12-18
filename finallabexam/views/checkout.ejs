@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            color: #8b0000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffe6e6;
+            border: 1px solid #8b0000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b0000;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #8b0000;
+            border-radius: 5px;
+        }
+
+        .cart-items {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #8b0000;
+            border-radius: 5px;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #8b0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b22222;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+
+        <div class="cart-items">
+            <h3>Order Summary</h3>
+            <% cart.forEach(item => { %>
+                <p><%= item.name %> - $<%= item.price %></p>
+            <% }) %>
+        </div>
+
+        <div class="total">
+            Total: $<%= total %>
+        </div>
+
+        <form action="/checkout" method="POST">
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" id="postalCode" name="postalCode" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
