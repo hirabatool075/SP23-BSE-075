@@ -7,13 +7,14 @@ server.use(expressLayouts);
 
 // Serve static files from 'public' and 'uploads' directories
 server.use(express.static("public"));
-server.use("/uploads", express.static("uploads"));  // Serve the uploads directory
+server.use("/uploads", express.static("uploads"));  // This will help express bypass the file and get data needed
 
 server.use(express.urlencoded());
 
 // Import models
 let Product = require("./models/product.model");  // Ensure it's required here
 let Category = require("./models/category.model");  // Same here
+let Order = require("./models/order.model")
 
 // Routes
 let adminProductsRouter = require("./routes/admin/products.controller");
@@ -24,6 +25,8 @@ server.use(adminCategoriesRouter);
 
 const productsRouter = require("./routes/products");
 server.use("/products", productsRouter);
+
+
 
 // Route to fetch products
 server.get('/products', (req, res) => {
@@ -46,6 +49,23 @@ server.get("/", async (req, res) => {
 
     return res.render("landingpage", { products, categories });
 });
+
+//cart route
+server.post('/add-to-cart', (req, res) => {
+  const { productId } = req.body;
+  Product.findById(productId).then(product => {
+    cart.push(product);
+    res.redirect('/cart');
+  }).catch(err => console.error(err));
+});
+
+// view cart
+server.get('/cart', (req, res) => {
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  res.render('cart', { cart, total });
+});
+
+
 
 // MongoDB connection
 let connectionString = "mongodb+srv://hirabatool:feel.fab@cluster0.ckiqx.mongodb.net/";
