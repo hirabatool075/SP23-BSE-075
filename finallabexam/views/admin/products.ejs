@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf8f0; /* Cream background */
+      color: #5a5a5a;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      text-align: center;
+      color: #c62828; /* Red heading */
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    a.btn-info {
+      display: inline-block;
+      background-color: #c62828; /* Red button */
+      color: #ffffff;
+      border-radius: 6px;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      margin: 15px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    a.btn-info:hover {
+      background-color: #b71c1c; /* Darker red on hover */
+    }
+
+    /* Form Styling */
+    form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .form-control, .form-select {
+      padding: 10px;
+      border: 1px solid #e57373;
+      border-radius: 6px;
+      background-color: #fffdf6; /* Subtle cream */
+      font-size: 1rem;
+      color: #5a5a5a;
+    }
+
+    button.btn-primary {
+      background-color: #c62828;
+      border: none;
+      color: #ffffff;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.btn-primary:hover {
+      background-color: #b71c1c;
+    }
+
+    /* Table Styling */
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border: 2px solid #c62828; /* Red border */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    thead {
+      background-color: #c62828; /* Red header */
+      color: #ffffff;
+    }
+
+    th, td {
+      text-align: center;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fffdf6; /* Cream row striping */
+    }
+
+    tbody tr:hover {
+      background-color: #fde6e6; /* Light red hover */
+    }
+
+    img {
+      border-radius: 6px;
+      max-width: 100px;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .page-item {
+      margin: 0 5px;
+    }
+
+    .page-link {
+      display: inline-block;
+      padding: 8px 12px;
+      background-color: #c62828;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .page-link:hover, .page-item.active .page-link {
+      background-color: #b71c1c;
+    }
+
+    .text-center {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #5a5a5a;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Title -->
+  <h3><%- pageTitle %></h3>
+
+  <!-- Create New Product Button -->
+  <div class="text-center">
+    <a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+  </div>
+
+  <!-- Search Form -->
+  <form method="GET" action="/admin/products">
+    <input 
+      type="text" 
+      name="search" 
+      class="form-control" 
+      placeholder="Search by product name..." 
+      value="<%= searchQuery || '' %>"
+    />
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <!-- Filter and Sort Form -->
+  <form method="GET" action="/admin/products">
+    <!-- Category Dropdown -->
+    <select name="category" class="form-select">
+      <option value="">All Categories</option>
+      <% categories.forEach(category => { %>
+        <option 
+          value="<%= category.title %>" 
+          <%= category.title === selectedCategory ? 'selected' : '' %>>
+          <%= category.title %>
+        </option>
+      <% }) %>
+    </select>
+
+    <!-- Sort Dropdown -->
+    <select name="sort" class="form-select">
+      <option value="">Sort By</option>
+      <option value="priceLow" <%= selectedSort === 'priceLow' ? 'selected' : '' %>>Price: Low to High</option>
+      <option value="priceHigh" <%= selectedSort === 'priceHigh' ? 'selected' : '' %>>Price: High to Low</option>
+      <option value="asc" <%= selectedSort === 'asc' ? 'selected' : '' %>>Alphabetical: A to Z</option>
+      <option value="desc" <%= selectedSort === 'desc' ? 'selected' : '' %>>Alphabetical: Z to A</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Apply</button>
+  </form>
+
+  <!-- Product Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Picture</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (products.length > 0) { %>
+        <% for (let product of products) { %>
+          <tr>
+            <td><%= product._id %></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.description %></td>
+            <td><%= product.categoryId.title %></td>
+            <td>
+              <img src="<%= product.imageUrls %>" alt="Product Image" />
+            </td>
+            <td>
+              <a href="/admin/products/edit/<%= product._id %>" class="btn btn-warning">Edit</a>
+              <a href="/admin/products/delete/<%= product._id %>" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        <% } %>
+      <% } else { %>
+        <tr>
+          <td colspan="7" class="text-center">No products found</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      <% if (currentPage > 1) { %>
+        <li class="page-item">
+          <a class="page-link" href="?page=<%= currentPage - 1 %>">Previous</a>
+        </li>
+      <% } %>
+
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+          <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+        </li>
+      <% } %>
+
+      <% if (currentPage < totalPages) { %>
+        <li class="page-item">
+          <a class="page-link" href="?page=<%= currentPage + 1 %>">Next</a>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</body>
+</html>
