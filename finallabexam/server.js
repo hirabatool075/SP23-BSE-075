@@ -26,7 +26,8 @@ server.use(adminCategoriesRouter);
 const productsRouter = require("./routes/products");
 server.use("/products", productsRouter);
 
-
+let checkoutRouter = require("./routes/checkout.controller");
+server.use("/checkout", checkoutRouter);
 
 // Route to fetch products
 server.get('/products', (req, res) => {
